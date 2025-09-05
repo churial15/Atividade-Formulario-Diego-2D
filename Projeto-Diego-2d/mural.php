@@ -1,3 +1,18 @@
+<?php
+include "conexao.php";
+
+if(isset($_POST['cadastra'])){
+    $nome  = mysqli_real_escape_string($conexao, $_POST['nome']);
+    $email = mysqli_real_escape_string($conexao, $_POST['email']);
+    $msg   = mysqli_real_escape_string($conexao, $_POST['msg']);
+
+    $sql = "INSERT INTO `diego-formulario-2d` (nome, email, mensagem) VALUES ('$nome', '$email', '$msg')";
+    mysqli_query($conexao, $sql) or die("Erro ao inserir dados: " . mysqli_error($conexao));
+    header("Location: mural.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,10 +34,10 @@ $(document).ready(function() {
     });
 });
 </script>
-</head>
 <meta charset="utf-8"/>
 <title>Mural de pedidos</title>
 <link rel="stylesheet" href="style.css"/>
+</head>
 <body>
 <div id="main">
 <div id="geral">
@@ -41,27 +56,9 @@ $(document).ready(function() {
     <input type="submit" value="Publicar no Mural" name="cadastra" class="btn"/>
 </form>
 </div>
-<div id="footer">
-</div>
-</div>
-</div>
-</body>
-</html>
 
 <?php
-include "conexao.php";
-
-if(isset($_POST['cadastra'])){
-    $nome  = mysqli_real_escape_string($conexao, $_POST['nome']);
-    $email = mysqli_real_escape_string($conexao, $_POST['email']);
-    $msg   = mysqli_real_escape_string($conexao, $_POST['msg']);
-
-    $sql = "INSERT INTO diego_formulario_2d (nome, email, mensagem) VALUES ('$nome', '$email', '$msg')";
-    mysqli_query($conexao, $sql) or die("Erro ao inserir dados: " . mysqli_error($conexao));
-    header("Location: mural.php");
-    exit;
-
-    $seleciona = mysqli_query($conexao, "SELECT * FROM diego_formulario_2d ORDER BY id DESC");
+$seleciona = mysqli_query($conexao, "SELECT * FROM `diego-formulario-2d` ORDER BY id DESC");
 while($res = mysqli_fetch_assoc($seleciona)){
     echo '<ul class="recados">';
     echo '<li><strong>ID:</strong> ' . $res['id'] . '</li>';
@@ -71,4 +68,10 @@ while($res = mysqli_fetch_assoc($seleciona)){
     echo '</ul>';
 }
 ?>
+<div id="footer">
 
+</div>
+</div>
+</div>
+</body>
+</html>
