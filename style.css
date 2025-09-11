@@ -1,110 +1,116 @@
-* { font-family: Verdana; font-size: 96%; margin:0; padding:0;}
-label { display: block; margin-top: 10px; }
-label.error { float: none; color: red; margin: 0 .5em 0 0; vertical-align: top; font-size: 10px }
-p { clear: both; }
-.submit { margin-top: 1em; }
-em { font-weight: bold; padding-right: 1em; vertical-align: top; }
-body{
-	background:url(images/bg.png) repeat;
+body {
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+    font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 0;
 }
 
-#main{
-	width:500px;
-	margin:auto;
+#main {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
 }
 
-#geral{
-	width:500px;
-	background:#FFFFFF;
-	float:left;
+#geral {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 
-#header{
-	width:500px;
-	height:81px;
-	background:url(images/header.jpg);
-	float:left;
-}
-
-.diego_formulario_2d {
-	float: left;
-	width: 480px;
-	margin-bottom: 10px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: #0066FF;
-	background-color: #EAF9FF;
-	padding: 10px;
-	list-style-type: none;
+#header {
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    text-align: center;
+    color: white;
 }
 
 #header h1 {
-	font-family: "Trebuchet MS", Tahoma, Verdana, "Agency FB", Arial;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: bold;
-	color: #990000;
-	margin-top: 20px;
-	margin-left: 5px;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
-#header p {
-	font-size: 13px;
-	font-style: normal;
-	color: #999999;
-	margin-left: 5px;
-}
-#header a {
-	font-weight: bold;
-	color: #333333;
-}
+
 #formulario_mural {
-	text-align: center;
-	float: left;
-	width: 480px;
-	margin-bottom: 10px;
-	background:#F5F5F5;
-	padding:10px;
+    padding: 25px;
+    text-align: left;
 }
-#mural input{
-	width: 150px;
-	padding-top: 7px;
-	padding-bottom: 7px;
-	margin-top: 3px;
-	border: 1px solid #666666;
+
+#formulario_mural label {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
 }
+
+#mural input, 
 #mural textarea {
-	padding: 5px;
-	height: 90px;
-	width: 140px;
-	border: 1px solid #666666;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
 }
+
+#mural input:focus, 
+#mural textarea:focus {
+    border-color: #ff416c;
+    box-shadow: 0 0 6px rgba(255, 65, 108, 0.3);
+    outline: none;
+}
+
 .btn {
-	padding: 7px;
-	width: 100px;
-	border: 1px solid #333333;
-	cursor:pointer;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    margin-top: 10px;
 }
 
-.btn:hover{
-	background:#333333;
-	color:#999999;
+.btn:hover {
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
 
-#footer{
-	width:500px;
-	height:30px;
-	float:left;
-	display:block;
-	background:#000000;
-	line-height:30px;
+/* Lista de mensagens */
+.recados {
+    list-style: none;
+    padding: 15px;
+    margin: 15px 20px;
+    border-left: 4px solid #ff416c;
+    background: #fafafa;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
-#footer p{
-	color:#666666;
-	padding-left:10px;
+.recados li {
+    margin: 6px 0;
+    font-size: 14px;
 }
 
-#footer a{
-	color:#CCCCCC;
-	text-decoration:none;
+#footer {
+    width: 100%;
+    height: 40px;
+    background: #222;
+    text-align: center;
+    color: #aaa;
+    line-height: 40px;
+    font-size: 13px;
 }
